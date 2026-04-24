@@ -1,0 +1,68 @@
+/* Mobile-first: Base styles for mobile devices */
+
+.toast {
+  position: fixed;
+  bottom: 16px;
+  right: 16px;
+  left: 16px;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 14px;
+  border-radius: var(--radius-md);
+  font-size: 12px;
+  font-weight: 500;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.18);
+  transition: opacity 0.3s, transform 0.3s;
+}
+
+.success { background: var(--color-primary); color: #fff; }
+.error   { background: #e44848; color: #fff; }
+
+.show { opacity: 1; transform: translateY(0); }
+.hide { opacity: 0; transform: translateY(16px); }
+
+.close {
+  cursor: pointer;
+  background: none;
+  border: none;
+  color: inherit;
+  font-size: 12px;
+  opacity: 0.8;
+  padding: 0 2px;
+  margin-left: auto;
+  flex-shrink: 0;
+}
+.close:hover { opacity: 1; }
+
+/* Tablet: 768px and up */
+@media (min-width: 768px) {
+  .toast {
+    bottom: 24px;
+    right: 24px;
+    left: auto;
+    width: auto;
+    font-size: 13px;
+    padding: 14px 16px;
+  }
+
+  .close {
+    font-size: 14px;
+    padding: 0 4px;
+  }
+}
+
+/* Desktop: 1024px and up */
+@media (min-width: 1024px) {
+  .toast {
+    bottom: 32px;
+    right: 32px;
+    font-size: 14px;
+    padding: 16px 20px;
+  }
+
+  .close {
+    font-size: 14px;
+  }
+}

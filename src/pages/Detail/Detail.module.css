@@ -1,0 +1,521 @@
+/* Mobile-first: Base styles for mobile devices */
+
+.page {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 16px var(--container-pad) 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  background: var(--color-white);
+  font-family: 'Inter', sans-serif;
+}
+
+.topSection {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  align-items: stretch;
+}
+
+.galleryColumn {
+  width: 100%;
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.mainImageWrap {
+  width: 100%;
+  flex: 1;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.mainImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.thumbnails {
+  display: flex;
+  gap: 8px;
+  height: 70px;
+  overflow-x: auto;
+}
+
+.thumbWrap {
+  width: 85px;
+  min-width: 85px;
+  height: 70px;
+  border-radius: 10px;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.thumb {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.infoColumn {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.card {
+  width: 100%;
+  background: #F7F7F7;
+  border-radius: 12px;
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.name {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--color-text-main);
+}
+
+.meta {
+  display: flex;
+  gap: 8px;
+  font-size: 12px;
+  color: var(--color-text-main);
+  flex-wrap: wrap;
+}
+
+.rating, .location {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  white-space: nowrap;
+}
+
+.price {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--color-text-main);
+}
+
+.description {
+  font-size: 12px;
+  line-height: 18px;
+  color: #475467;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+.sectionTitle {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--color-text-main);
+  margin-top: 4px;
+}
+
+.badges {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 8px;
+}
+
+.badge {
+  padding: 4px 8px;
+  background: #E8ECEF;
+  border-radius: 100px;
+  font-size: 10px;
+  font-weight: 500;
+  color: var(--color-text-main);
+  white-space: nowrap;
+}
+
+.specsTable {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.specRow {
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--color-text-main);
+  gap: 8px;
+}
+
+.bottomSection {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  align-items: stretch;
+}
+
+.reviewsColumn {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  min-width: 0;
+}
+
+.reviewCard {
+  width: 100%;
+  height: auto;
+  min-height: 100px;
+  background: #F7F7F7;
+  border-radius: 12px;
+  padding: 10px;
+  border: 1px solid var(--color-border);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.bookingCard {
+  flex: 1;
+  min-height: auto;
+  background: #F7F7F7;
+  border-radius: 12px;
+  padding: 16px;
+  border: 1px solid var(--color-border);
+}
+
+.reviewsList {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.reviewHeader {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.avatar {
+  width: 32px;
+  height: 32px;
+  background: #E8ECEF;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--color-primary);
+  flex-shrink: 0;
+}
+
+.reviewerName {
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.stars {
+  display: flex;
+  gap: 1px;
+}
+
+.reviewComment {
+  font-size: 12px;
+  line-height: 16px;
+  color: #475467;
+}
+
+.formSub {
+  font-size: 12px;
+  color: #475467;
+  margin-bottom: 6px;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: flex-start;
+}
+
+.input {
+  width: 100%;
+  padding: 10px;
+  background: #FFFFFF;
+  border: none;
+  border-radius: 8px;
+  font-size: 12px;
+  outline: none;
+  font-family: inherit;
+}
+
+.submitBtn {
+  width: 100%;
+  height: 44px;
+  padding: 10px 16px;
+  background: var(--color-primary);
+  color: white;
+  border: none;
+  border-radius: 200px;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color var(--transition);
+}
+
+.submitBtn:hover {
+  background: var(--color-primary-dark);
+}
+
+/* Tablet: 768px and up */
+@media (min-width: 768px) {
+  .page {
+    padding: 24px var(--container-pad) 48px;
+    gap: 32px;
+  }
+
+  .topSection {
+    flex-direction: row;
+    gap: 16px;
+    align-items: flex-start;
+  }
+
+  .galleryColumn {
+    width: 50%;
+    height: 400px;
+    gap: 16px;
+  }
+
+  .infoColumn {
+    width: 50%;
+    gap: 12px;
+  }
+
+  .thumbnails {
+    height: 80px;
+    gap: 12px;
+  }
+
+  .thumbWrap {
+    width: 100px;
+    min-width: 100px;
+    height: 80px;
+  }
+
+  .card {
+    padding: 16px;
+    gap: 12px;
+  }
+
+  .name {
+    font-size: 18px;
+  }
+
+  .price {
+    font-size: 18px;
+  }
+
+  .meta {
+    font-size: 13px;
+    gap: 10px;
+  }
+
+  .description {
+    font-size: 13px;
+    line-height: 20px;
+    -webkit-line-clamp: 3;
+    line-clamp: 3;
+  }
+
+  .sectionTitle {
+    font-size: 16px;
+  }
+
+  .badge {
+    padding: 6px 12px;
+    font-size: 12px;
+  }
+
+  .specRow {
+    font-size: 13px;
+  }
+
+  .reviewCard {
+    min-height: 140px;
+    padding: 12px;
+  }
+
+  .avatar {
+    width: 36px;
+    height: 36px;
+    font-size: 14px;
+  }
+
+  .reviewerName {
+    font-size: 14px;
+  }
+
+  .reviewComment {
+    font-size: 13px;
+  }
+
+  .input {
+    padding: 12px;
+    font-size: 13px;
+  }
+
+  .submitBtn {
+    height: 48px;
+    padding: 12px 20px;
+    font-size: 14px;
+  }
+}
+
+/* Desktop: 1024px and up */
+@media (min-width: 1024px) {
+  .page {
+    padding: 32px var(--container-pad) 56px;
+    gap: 40px;
+  }
+
+  .topSection {
+    gap: 24px;
+  }
+
+  .galleryColumn {
+    width: 45%;
+    height: 470px;
+    gap: 20px;
+  }
+
+  .infoColumn {
+    width: 55%;
+  }
+
+  .thumbnails {
+    height: 95px;
+    gap: 16px;
+  }
+
+  .thumbWrap {
+    width: 121px;
+    min-width: 121px;
+    height: 95px;
+  }
+
+  .card {
+    padding: 24px;
+    gap: 16px;
+  }
+
+  .name {
+    font-size: 24px;
+  }
+
+  .price {
+    font-size: 24px;
+  }
+
+  .meta {
+    font-size: 16px;
+    gap: 16px;
+  }
+
+  .description {
+    font-size: 16px;
+    line-height: 24px;
+    -webkit-line-clamp: 3;
+    line-clamp: 3;
+  }
+
+  .sectionTitle {
+    font-size: 20px;
+  }
+
+  .badges {
+    gap: 12px;
+  }
+
+  .badge {
+    padding: 8px 16px;
+    font-size: 14px;
+  }
+
+  .specRow {
+    font-size: 16px;
+  }
+
+  .bottomSection {
+    flex-direction: row;
+    gap: 48px;
+  }
+
+  .reviewCard {
+    height: 180px;
+    padding: 16px;
+    gap: 16px;
+  }
+
+  .bookingCard {
+    min-height: 384px;
+    padding: 44px;
+    margin-top: 48px;
+  }
+
+  .avatar {
+    width: 44px;
+    height: 44px;
+    font-size: 18px;
+  }
+
+  .reviewerName {
+    font-size: 16px;
+  }
+
+  .reviewComment {
+    font-size: 16px;
+    line-height: 24px;
+  }
+
+  .formSub {
+    font-size: 16px;
+  }
+
+  .input {
+    padding: 16px;
+    font-size: 16px;
+  }
+
+  .submitBtn {
+    max-width: 527px;
+    height: 56px;
+    padding: 16px 60px;
+    font-size: 16px;
+  }
+}
+
+/* Large desktop: 1440px and up */
+@media (min-width: 1440px) {
+  .page {
+    padding: 40px var(--container-pad) 80px;
+    gap: 64px;
+  }
+
+  .bottomSection {
+    max-width: 1312px;
+  }
+}

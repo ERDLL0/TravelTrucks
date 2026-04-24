@@ -1,0 +1,266 @@
+/* ─── CARD ─── */
+.card {
+  display: flex;
+  flex-direction: column;
+  background: var(--color-white);
+  border: 1px solid #F7F7F7;
+  border-radius: 20px;
+  padding: 16px;
+  gap: 16px;
+  transition: box-shadow 0.25s ease;
+  overflow: hidden;
+}
+
+.card:hover {
+  box-shadow: 0 8px 24px rgba(16, 24, 40, 0.08);
+}
+
+/* ─── IMAGE ─── */
+.imageWrap {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  border-radius: 12px;
+  overflow: hidden;
+  background: #F2F4F7;
+  flex-shrink: 0;
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.heartBtn {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  width: 32px;
+  height: 32px;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(4px);
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s ease;
+}
+
+.heartBtn:hover {
+  transform: scale(1.15);
+}
+
+.active {
+  background: rgba(228, 72, 72, 0.15);
+}
+
+/* ─── CONTENT ─── */
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  flex: 1;
+  min-width: 0; /* CRITICAL: prevents flex child overflow */
+}
+
+.topRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+.title {
+  font-family: 'Inter', sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  color: #101828;
+  line-height: 1.2;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  min-width: 0;
+}
+
+.price {
+  font-family: 'Inter', sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  color: #101828;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+/* ─── META ─── */
+.meta {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.rating,
+.location {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 13px;
+  color: #101828;
+  white-space: nowrap;
+}
+
+.rating {
+  text-decoration: underline;
+}
+
+/* ─── DESCRIPTION ─── */
+.desc {
+  font-size: 14px;
+  line-height: 20px;
+  color: #475467;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* ─── BADGES ─── */
+.badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 12px;
+  background: #F7F7F7;
+  border-radius: 100px;
+  font-size: 12px;
+  font-weight: 500;
+  color: #101828;
+  border: 1px solid #DADDE1;
+  white-space: nowrap;
+}
+
+/* ─── BUTTON ─── */
+.btn {
+  align-self: flex-start;
+  padding: 12px 28px;
+  background: var(--color-primary);
+  color: var(--color-white);
+  border: none;
+  border-radius: 200px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.25s ease, transform 0.15s ease;
+  white-space: nowrap;
+}
+
+.btn:hover {
+  background: var(--color-primary-dark);
+  transform: translateY(-1px);
+}
+
+.btn:active {
+  transform: translateY(0);
+}
+
+/* ═══════════════════════════════════════
+   TABLET (≥ 768px) — horizontal card
+   ═══════════════════════════════════════ */
+@media (min-width: 768px) {
+  .card {
+    flex-direction: row;
+    padding: 20px;
+    gap: 20px;
+  }
+
+  .imageWrap {
+    width: 200px;
+    min-height: 200px;
+    aspect-ratio: auto;
+    flex-shrink: 0;
+  }
+
+  .title {
+    font-size: 18px;
+  }
+
+  .price {
+    font-size: 18px;
+  }
+
+  .badge {
+    font-size: 12px;
+    padding: 6px 10px;
+  }
+
+  .btn {
+    padding: 12px 28px;
+    font-size: 14px;
+  }
+}
+
+/* ═══════════════════════════════════════
+   DESKTOP (≥ 1024px) — full size
+   ═══════════════════════════════════════ */
+@media (min-width: 1024px) {
+  .card {
+    padding: 24px;
+    gap: 24px;
+  }
+
+  .imageWrap {
+    width: 292px;
+    min-height: 310px;
+  }
+
+  .title {
+    font-size: 24px;
+  }
+
+  .price {
+    font-size: 24px;
+  }
+
+  .content {
+    gap: 16px;
+  }
+
+  .meta {
+    gap: 16px;
+  }
+
+  .rating,
+  .location {
+    font-size: 16px;
+  }
+
+  .desc {
+    font-size: 16px;
+    line-height: 24px;
+  }
+
+  .badge {
+    font-size: 14px;
+    padding: 10px 18px;
+    gap: 8px;
+  }
+
+  .badges {
+    gap: 8px;
+  }
+
+  .btn {
+    padding: 16px 40px;
+    font-size: 16px;
+  }
+}

@@ -1,0 +1,233 @@
+/* ═══════════════════════════════════════
+   CATALOG PAGE — Mobile First
+   ═══════════════════════════════════════ */
+
+.page {
+  min-height: 100vh;
+  background: #FFFFFF;
+  padding: 24px 16px;
+  font-family: 'Inter', sans-serif;
+}
+
+.inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* ─── MOBILE: Filter toggle button ─── */
+.filterToggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 14px 24px;
+  border-radius: 200px;
+  border: 1px solid #DADDE1;
+  background: #FFFFFF;
+  font-size: 16px;
+  font-weight: 600;
+  color: #101828;
+  cursor: pointer;
+  width: fit-content;
+  transition: border-color 0.2s ease;
+}
+
+.filterToggle:hover {
+  border-color: var(--color-primary);
+}
+
+/* ─── DESKTOP: Filter sidebar (hidden on mobile) ─── */
+.filterDesktop {
+  display: none;
+}
+
+/* ─── MOBILE: Full-screen filter drawer ─── */
+.filterDrawer {
+  position: fixed;
+  inset: 0;
+  background: #FFFFFF;
+  z-index: 1000;
+  padding: 24px;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  animation: slideUp 0.3s ease;
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.drawerHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid #F2F4F7;
+}
+
+.drawerHeader h3 {
+  font-size: 24px;
+  font-weight: 600;
+  color: #101828;
+}
+
+.drawerHeader button {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid #DADDE1;
+  background: #FFFFFF;
+  font-size: 18px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s ease;
+}
+
+.drawerHeader button:hover {
+  background: #F7F7F7;
+}
+
+.applyBtn {
+  margin-top: 24px;
+  padding: 16px;
+  width: 100%;
+  height: 56px;
+  background: var(--color-primary);
+  color: #FFFFFF;
+  border-radius: 200px;
+  border: none;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.25s ease;
+}
+
+.applyBtn:hover {
+  background: var(--color-primary-dark);
+}
+
+/* ─── MAIN CONTENT ─── */
+.main {
+  flex: 1;
+  min-width: 0;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+/* ─── LOAD MORE ─── */
+.loadMoreWrap {
+  display: flex;
+  justify-content: center;
+  padding: 40px 0;
+}
+
+.loadMoreBtn {
+  padding: 16px 40px;
+  background: #FFFFFF;
+  border: 1px solid #DADDE1;
+  border-radius: 200px;
+  font-size: 16px;
+  font-weight: 500;
+  color: #101828;
+  cursor: pointer;
+  transition: border-color 0.25s ease, transform 0.15s ease;
+}
+
+.loadMoreBtn:hover {
+  border-color: #101828;
+  transform: translateY(-1px);
+}
+
+.loadMoreBtn:active {
+  transform: translateY(0);
+}
+
+.loadMoreLoader {
+  display: flex;
+  justify-content: center;
+  padding: 40px 0;
+}
+
+/* ─── ERROR / EMPTY ─── */
+.error,
+.empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  padding: 80px 16px;
+  color: #475467;
+  text-align: center;
+}
+
+.retryBtn {
+  padding: 12px 32px;
+  background: var(--color-primary);
+  color: #FFFFFF;
+  border: none;
+  border-radius: 200px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/* ═══════════════════════════════════════
+   TABLET+ (≥ 768px) — Side-by-side layout
+   ═══════════════════════════════════════ */
+@media (min-width: 768px) {
+  .page {
+    padding: 32px 24px;
+  }
+
+  .inner {
+    flex-direction: row;
+    gap: 24px;
+    align-items: flex-start;
+  }
+
+  .filterToggle {
+    display: none;
+  }
+
+  .filterDrawer {
+    display: none !important;
+  }
+
+  .filterDesktop {
+    display: block;
+    position: sticky;
+    top: 88px;
+    flex-shrink: 0;
+  }
+}
+
+/* ═══════════════════════════════════════
+   DESKTOP (≥ 1024px)
+   ═══════════════════════════════════════ */
+@media (min-width: 1024px) {
+  .page {
+    padding: 48px 64px;
+  }
+
+  .inner {
+    gap: 64px;
+  }
+}

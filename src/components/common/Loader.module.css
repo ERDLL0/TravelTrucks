@@ -1,0 +1,37 @@
+/* Mobile-first: Base styles for mobile devices */
+
+.spinner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ring {
+  border-radius: 50%;
+  border: 3px solid var(--color-border);
+  border-top-color: var(--color-primary);
+  animation: spin 0.8s linear infinite;
+}
+
+.sm .ring  { width: 20px; height: 20px; }
+.md .ring  { width: 32px; height: 32px; }
+.lg .ring  { width: 40px; height: 40px; }
+
+.fullPage {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255,255,255,0.7);
+  z-index: 9999;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* Tablet and up */
+@media (min-width: 768px) {
+  .lg .ring  { width: 56px; height: 56px; }
+}

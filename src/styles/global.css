@@ -1,0 +1,92 @@
+/* =============================================
+   TravelTrucks – Global CSS Design System
+   ============================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+/* --- Design Tokens --- */
+:root {
+  --color-primary:    #829B91;    /* Main Green */
+  --color-primary-dark: #6D7B75; /* Hover Green */
+  --color-accent:     #E44848;    /* Heart/Active Red */
+  --color-yellow:     #FFC531;    /* Stars */
+  --color-white:      #FFFFFF;
+  --color-bg-light:   #FFFFFF;    /* Everything else background is white */
+  --color-bg-soft:    #F7F7F7;    /* Used for inputs/badges if needed */
+  --color-header-bg:  #F7F7F7;    /* Header background */
+  --color-text-main:  #101828;
+  --color-text-sec:   #475467;
+  --color-border:     #F7F7F7;    /* Borders are #F7F7F7 */
+  --color-slate:      #6C717B;
+
+  --radius-sm:   10px;
+  --radius-md:   12px;
+  --radius-lg:   20px;
+  --radius-full: 200px;
+
+  --shadow-card: 0 4px 18px rgba(0, 0, 0, 0.05);
+  --transition: 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+
+  --max-width: 1440px;
+  
+  /* Mobile-first: start with mobile padding */
+  --container-pad: 16px;
+}
+
+/* Tablet and up */
+@media (min-width: 768px) {
+  :root {
+    --container-pad: 24px;
+  }
+}
+
+/* Medium screens and up */
+@media (min-width: 1024px) {
+  :root {
+    --container-pad: 48px;
+  }
+}
+
+/* Large screens and up */
+@media (min-width: 1440px) {
+  :root {
+    --container-pad: 64px;
+  }
+}
+
+/* --- Reset --- */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: var(--color-bg);
+  color: var(--color-text);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+a { text-decoration: none; color: inherit; }
+
+button { cursor: pointer; border: none; background: none; font-family: inherit; }
+
+img { display: block; max-width: 100%; }
+
+ul { list-style: none; }
+
+/* --- Layout Helpers --- */
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 var(--container-pad);
+}
+
+/* --- Scrollbar --- */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--color-bg-2); }
+::-webkit-scrollbar-thumb { background: var(--color-border); border-radius: var(--radius-full); }
