@@ -1,4 +1,5 @@
 import { useDispatch, useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
 import { toggleFavorite } from '../../redux/favorites/favoritesSlice';
 import {
   StarIcon,
@@ -109,12 +110,12 @@ export default function CamperCard({ camper }) {
         </div>
 
         {/* ACTION */}
-        <button
+        <Link
+          to={`/catalog/${camper.id}`}
           className={styles.btn}
-          onClick={() => window.open(`/catalog/${camper.id}`, '_blank')}
         >
           Show more
-        </button>
+        </Link>
       </div>
     </article>
   );
