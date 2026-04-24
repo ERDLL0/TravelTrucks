@@ -113,6 +113,8 @@ export default function CamperCard({ camper }) {
         <Link
           to={`/catalog/${camper.id}`}
           className={styles.btn}
+          target="_blank"
+          rel="noopener noreferrer"
         >
           Show more
         </Link>

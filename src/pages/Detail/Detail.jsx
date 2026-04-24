@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { getCamperById } from '../../redux/campers/campersSlice';
-import { StarIcon, MapPinIcon, TransmissionIcon, EngineIcon, KitchenIcon, ACIcon, AlcoveIcon } from '../../components/common/Icons';
+import { StarIcon, MapPinIcon, TransmissionIcon, EngineIcon, KitchenIcon, ACIcon, AlcoveIcon, BathroomIcon, TVIcon, RadioIcon, FormIcon } from '../../components/common/Icons';
 import Loader from '../../components/common/Loader';
 import styles from './Detail.module.css';
 
@@ -19,12 +19,18 @@ export default function DetailPage() {
   if (status === 'loading' || !camper) return <Loader size="lg" />;
 
   const badges = [
-    { label: 'Automatic', icon: <TransmissionIcon />, show: camper.transmission === 'automatic' },
+    { label: camper.transmission ? formatForm(camper.transmission) : 'Automatic', icon: <TransmissionIcon />, show: !!camper.transmission },
+    { label: camper.engine ? formatForm(camper.engine) : 'Petrol', icon: <EngineIcon />, show: !!camper.engine },
     { label: 'AC', icon: <ACIcon />, show: camper.AC },
-    { label: 'Petrol', icon: <EngineIcon />, show: camper.engine === 'petrol' },
     { label: 'Kitchen', icon: <KitchenIcon />, show: camper.kitchen },
-    { label: 'Radio', icon: <ACIcon />, show: camper.radio }, // Mock radio icon
-    { label: 'Alcove', icon: <AlcoveIcon />, show: camper.form === 'alcove' },
+    { label: 'Bathroom', icon: <BathroomIcon />, show: camper.bathroom },
+    { label: 'TV', icon: <TVIcon />, show: camper.TV },
+    { label: 'Radio', icon: <RadioIcon />, show: camper.radio },
+    { label: 'Refrigerator', icon: <KitchenIcon />, show: camper.refrigerator },
+    { label: 'Microwave', icon: <KitchenIcon />, show: camper.microwave },
+    { label: 'Gas', icon: <EngineIcon />, show: camper.gas },
+    { label: 'Water', icon: <BathroomIcon />, show: camper.water },
+    { label: camper.form ? formatForm(camper.form) : '', icon: camper.form === 'alcove' ? <AlcoveIcon /> : <FormIcon />, show: !!camper.form },
   ].filter(b => b.show);
 
   const gallery = camper.gallery || [];
@@ -75,7 +81,7 @@ export default function DetailPage() {
                 <span>{camper.location}</span>
               </div>
             </div>
-            <div className={styles.price}>€{camper.price}</div>
+            <div className={styles.price}>€{camper.price?.toFixed(2)}</div>
             <p className={styles.description}>{camper.description}</p>
           </div>
 
